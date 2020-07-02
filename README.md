@@ -13,7 +13,7 @@
 
 ### 힙(Heap)
 
-[가장 큰 수 - java](docs/biggest-number-java.md)
+[가장 큰 수 - java](docs/sorting/biggest-number-java.md)
 
 ### 정렬
 
