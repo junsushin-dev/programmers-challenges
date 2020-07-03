@@ -19,7 +19,7 @@
 
 ### 완전탐색
 
-[소수 찾기 - java](docs/brute-force/finding-rpimes-java.md)
+[소수 찾기 - java](docs/brute-force/finding-primes-java.md)
 
 ### 탐욕법(Greedy)
 
