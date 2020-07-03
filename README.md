@@ -27,6 +27,8 @@
 
 ### 동적계획법(Dynamic Programming)
 
+[타일 장식물 - java](docs/dynamic-programming/tile-decorations-java.md)
+
 ### 깊이/너비 우선탐색(DFS/BFS)
 
 ### 이분탐색
