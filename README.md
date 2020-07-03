@@ -13,11 +13,13 @@
 
 ### 힙(Heap)
 
-[가장 큰 수 - java](docs/sorting/biggest-number-java.md)
-
 ### 정렬
 
+[가장 큰 수 - java](docs/sorting/biggest-number-java.md)
+
 ### 완전탐색
+
+[소수 찾기 - java](docs/brute-force/finding-rpimes-java.md)
 
 ### 탐욕법(Greedy)
 
