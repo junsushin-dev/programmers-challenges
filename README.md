@@ -23,6 +23,8 @@
 
 ### 탐욕법(Greedy)
 
+[큰 수 만들기 - java](docs/greedy/make-big-number-java.md)
+
 ### 동적계획법(Dynamic Programming)
 
 ### 깊이/너비 우선탐색(DFS/BFS)
