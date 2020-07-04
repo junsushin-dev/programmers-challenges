@@ -34,3 +34,5 @@
 [네트워크 - java](docs/dfs&bfs/network-java.md)
 
 ### 이분탐색
+
+[입국심사 - java](docs/binary-search/papers-please-java.md)
