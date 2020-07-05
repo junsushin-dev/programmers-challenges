@@ -9,6 +9,8 @@
 
 ### 해시
 
+[위장 - java](docs/hash-table/disguise-java.md)
+
 ### 스택/큐
 
 ### 힙(Heap)
