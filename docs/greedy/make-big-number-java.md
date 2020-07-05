@@ -1,6 +1,6 @@
 # 큰 수 만들기
 
-출처: https://programmers.co.kr/learn/challenges
+출처: https://programmers.co.kr/learn/courses/30/lessons/42883
 
 ## 지문
 

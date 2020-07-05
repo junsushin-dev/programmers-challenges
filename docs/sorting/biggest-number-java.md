@@ -1,6 +1,6 @@
 # 가장 큰 수
 
-출처: https://programmers.co.kr/learn/challenges
+출처: https://programmers.co.kr/learn/courses/30/lessons/42746
 
 ## 지문
 
