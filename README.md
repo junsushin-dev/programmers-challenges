@@ -36,3 +36,7 @@
 ### 이분탐색
 
 [입국심사 - java](docs/binary-search/papers-please-java.md)
+
+### 그래프
+
+[순위 - java](docs/graph/ranking-java.md)
