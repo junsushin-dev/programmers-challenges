@@ -13,6 +13,8 @@
 
 ### 스택/큐
 
+[기능개발 - java](docs/stack&queue/function-development-java.md)
+
 ### 힙(Heap)
 
 ### 정렬
