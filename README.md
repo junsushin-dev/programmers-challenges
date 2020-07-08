@@ -17,6 +17,8 @@
 
 ### 힙(Heap)
 
+[디스크 컨트롤러 - java](docs/heap/disk-controller-java.md)
+
 ### 정렬
 
 [가장 큰 수 - java](docs/sorting/biggest-number-java.md)
