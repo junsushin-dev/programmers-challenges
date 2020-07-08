@@ -29,6 +29,8 @@
 
 [소수 찾기 - java](docs/brute-force/finding-primes-java.md)
 
+[숫자 야구 - java](docs/brute-force/bulls-and-cows-java.md)
+
 ### 탐욕법(Greedy)
 
 [큰 수 만들기 - java](docs/greedy/make-big-number-java.md)
