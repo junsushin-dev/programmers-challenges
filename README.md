@@ -41,6 +41,8 @@
 
 [타일 장식물 - java](docs/dynamic-programming/tile-decorations-java.md)
 
+[정수 삼각형 - java](docs/dynamic-programming/integer-triangle-java.md)
+
 ### 깊이/너비 우선탐색(DFS/BFS)
 
 [네트워크 - java](docs/dfs&bfs/network-java.md)
