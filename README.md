@@ -35,6 +35,8 @@
 
 [큰 수 만들기 - java](docs/greedy/make-big-number-java.md)
 
+[조이스틱 - java](docs/greedy/joystick-java.md)
+
 ### 동적계획법(Dynamic Programming)
 
 [타일 장식물 - java](docs/dynamic-programming/tile-decorations-java.md)
