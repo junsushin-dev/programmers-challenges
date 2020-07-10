@@ -53,6 +53,8 @@
 
 [입국심사 - java](docs/binary-search/papers-please-java.md)
 
+[징검다리 - java](docs/binary-search/stepping-stones-java.md)
+
 ### 그래프
 
 [순위 - java](docs/graph/ranking-java.md)
