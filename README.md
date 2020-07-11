@@ -15,6 +15,8 @@
 
 [기능개발 - java](docs/stack&queue/function-development-java.md)
 
+[프린터 - java](docs/stack&queue/printer-java.md)
+
 ### 힙(Heap)
 
 [디스크 컨트롤러 - java](docs/heap/disk-controller-java.md)
