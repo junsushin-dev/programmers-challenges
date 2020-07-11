@@ -11,6 +11,8 @@
 
 [위장 - java](docs/hash-table/disguise-java.md)
 
+[베스트앨범 - java](docs/best-album-java.md)
+
 ### 스택/큐
 
 [기능개발 - java](docs/stack&queue/function-development-java.md)
