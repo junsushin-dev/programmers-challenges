@@ -11,7 +11,7 @@
 
 [위장 - java](docs/hash-table/disguise-java.md)
 
-[베스트앨범 - java](docs/best-album-java.md)
+[베스트앨범 - java](docs/hash-table/best-album-java.md)
 
 ### 스택/큐
 
