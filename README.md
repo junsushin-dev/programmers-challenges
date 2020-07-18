@@ -9,6 +9,8 @@
 
 ### 해시
 
+[완주하지 못한 선수 - java](docs/hash-table/retired-runner.md)
+
 [위장 - java](docs/hash-table/disguise-java.md)
 
 [베스트앨범 - java](docs/hash-table/best-album-java.md)
