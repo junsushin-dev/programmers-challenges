@@ -9,7 +9,7 @@
 
 ### 해시
 
-[완주하지 못한 선수 - java](docs/hash-table/retired-runner.md)
+[완주하지 못한 선수 - java](docs/hash-table/retired-runner-java.md)
 
 [위장 - java](docs/hash-table/disguise-java.md)
 
