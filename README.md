@@ -11,6 +11,8 @@
 
 [완주하지 못한 선수 - java](docs/hash-table/retired-runner-java.md)
 
+[전화번호 목록 - java](docs/hash-table/phone-book-java.md)
+
 [위장 - java](docs/hash-table/disguise-java.md)
 
 [베스트앨범 - java](docs/hash-table/best-album-java.md)
