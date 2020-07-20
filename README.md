@@ -19,6 +19,8 @@
 
 ### 스택/큐
 
+[다리를 지나는 트럭 - java](docs/stack&queue/bridge-cross-java.md)
+
 [기능개발 - java](docs/stack&queue/function-development-java.md)
 
 [프린터 - java](docs/stack&queue/printer-java.md)
