@@ -29,6 +29,8 @@
 
 ### 힙(Heap)
 
+[더 맵게 - java](docs/heap/spicier-java.md)
+
 [디스크 컨트롤러 - java](docs/heap/disk-controller-java.md)
 
 ### 정렬
