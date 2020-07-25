@@ -37,6 +37,8 @@
 
 ### 정렬
 
+[K번째수 - java](docs/sorting/kth-number-java.md)
+
 [가장 큰 수 - java](docs/sorting/biggest-number-java.md)
 
 [H-Index - java](docs/sorting/h-index-java.md)
