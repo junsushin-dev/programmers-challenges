@@ -45,6 +45,8 @@
 
 ### 완전탐색
 
+[모의고사 - java](docs/brute-force/mock-exam-java.md)
+
 [소수 찾기 - java](docs/brute-force/finding-primes-java.md)
 
 [숫자 야구 - java](docs/brute-force/bulls-and-cows-java.md)
