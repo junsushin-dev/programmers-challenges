@@ -53,6 +53,8 @@
 
 ### 탐욕법(Greedy)
 
+[체육복 - java](docs/greedy/gym-clothes-java.md)
+
 [큰 수 만들기 - java](docs/greedy/make-big-number-java.md)
 
 [조이스틱 - java](docs/greedy/joystick-java.md)
