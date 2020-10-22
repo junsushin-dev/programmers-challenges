@@ -19,6 +19,8 @@
 
 ### 스택/큐
 
+[주식가격 - java](docs/stack&queue/stock-price-java.md)
+
 [다리를 지나는 트럭 - java](docs/stack&queue/bridge-cross-java.md)
 
 [탑 - java](docs/stack&queue/towers-java.md)
