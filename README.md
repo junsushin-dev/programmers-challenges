@@ -37,6 +37,8 @@
 
 [디스크 컨트롤러 - java](docs/heap/disk-controller-java.md)
 
+[이중우선순위큐 - java](docs/heap/double-ended-priority-queue-java.md)
+
 ### 정렬
 
 [K번째수 - java](docs/sorting/kth-number-java.md)
