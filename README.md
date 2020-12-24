@@ -55,6 +55,8 @@
 
 [숫자 야구 - java](docs/brute-force/bulls-and-cows-java.md)
 
+[카펫 - java](docs/brute-force/carpet.md)
+
 ### 탐욕법(Greedy)
 
 [체육복 - java](docs/greedy/gym-clothes-java.md)
