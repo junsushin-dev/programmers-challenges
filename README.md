@@ -67,6 +67,8 @@
 
 [구명보트 - java](docs/greedy/life-boat.md)
 
+[섬 연결하기 - java](docs/greedy/connect-islands.md)
+
 ### 동적계획법(Dynamic Programming)
 
 [타일 장식물 - java](docs/dynamic-programming/tile-decorations-java.md)
