@@ -61,7 +61,7 @@ numbers |	return
 
 ## Solution.java
 
-~~~
+~~~java
 import java.util.*;
 
 class Solution {

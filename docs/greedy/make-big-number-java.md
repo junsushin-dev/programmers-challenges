@@ -54,7 +54,7 @@ String의 경우 java에서 immutable한 객체로서, "ABC" + "D"의 산식을 
 메모리를 할당하고 객체를 매번 만드는 overhead를 줄이기 위해서, character 단위로 조작이 가능한 stringbuffer를 이용하여 위에서 만든 조건에 해당하는 문자들을 지워주는 방식으로 답안을 구성했습니다.
 
 ## Solution.java
-~~~
+~~~java
 class Solution {
     public String solution(String number, int k) {
         StringBuffer str = new StringBuffer(number);

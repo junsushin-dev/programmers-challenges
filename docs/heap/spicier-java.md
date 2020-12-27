@@ -43,7 +43,7 @@ Heap(또는 PriorityQueue)를 이용해서 받은 원소들을 오름차순으�
 배열을 단순히 정렬하여도 처음에 받은 원소를 오름차순으로 정렬하여 사용할 수 있지만, 이 문제의 경우 섞은 음식이 새로운 원소로서 추가되어야 하기 때문에 Heap이 더욱 적합한 자료구조라고 할 수 있습니다. 단순한 배열 + 원소 추가 시에 정렬을 매번 새로 해줄 경우 Heap을 사용하는 것보다 더 연산속도가 비효율적이 될 것입니다.
 
 Java의 경우 PriorityQueue 자료구조 클래스가 Java.util에 내장되어 있어서 간편하게 호출하여 사용할 수 있습니다. 단순히 PriorityQueue를 import 및 선언해주고, 모든 원소를 집어넣은 후 차례차례 poll()을 통해서 가장 덜 매운 원소를 추출하여 섞고 다시 PriorityQueue에 넣어주는 과정을 반복하면 됩니다.
-~~~
+~~~java
 while(pq.peek() < K && pq.size() > 1) {
     Integer last = pq.poll();
     Integer secondLast = pq.poll();
@@ -55,12 +55,12 @@ while(pq.peek() < K && pq.size() > 1) {
 ## 팁
 
 for을 이용한 반복문 없이 입력값으로 받은 배열을 PriorityQueue에 넣기 위해서 Stream을 사용할 수 있습니다. Stream을 사용하여 받은 배열을 Collection 으로 바꾸어 PriorityQueue를 최초 선언 시에 넣어줄 경우 해당 원소들이 그대로 새로 생긴 PriorityQueue에 들어가게 됩니다.
-~~~
+~~~java
 PriorityQueue<Integer> pq = new PriorityQueue<>(Arrays.stream(scoville).boxed().collect(Collectors.toList()));
 ~~~
 
 ## Solution.java
-~~~
+~~~java
 import java.util.*;
 import java.util.stream.Collectors;
 

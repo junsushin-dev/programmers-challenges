@@ -80,7 +80,7 @@ stock	|dates	|supplies	|k	|result
 
 위와 같이 알고리즘을 진행하기 위해서, 각 공급기회를 공급량 기준 내림차순으로 정렬해서 각 시점에 가장 공급량이 높은 기회를 알아내야 합니다. 이를 위해서는 PriorityQueue와 Heap 자료구조를 사용하면 됩니다. Java의 정렬순서가 기본값이 오름차순이기 때문에, Comparator를 새로 정의하여 내림차순으로 바꾸어 주었습니다.
 
-~~~
+~~~java
 PriorityQueue<Integer> myQueue = new PriorityQueue<>(dates.length, new Comparator<Integer>() {
     @Override
     public int compare(Integer p1, Integer p2) {
@@ -91,7 +91,7 @@ PriorityQueue<Integer> myQueue = new PriorityQueue<>(dates.length, new Comparato
 
 PriorityQueue를 만든 이후에는, 위 사례의 알고리즘을 그대로 while문으로 구현하면 됩니다.
 
-~~~
+~~~java
 int currStock = stock;
         int answer = 0;
         for(int i = 0; i < k; i++) {
@@ -110,7 +110,7 @@ int currStock = stock;
 
 Method Override를 이용해서 Comparator를 이와 같이 PriorityQueue 선언시에 만들어주면 별도로 이름을 붙은 Comparator 클래스를 만들지 않아도 됩니다. 명시적으로 Comparator를 만들고 싶은 경우에는 클래스를 새로 선언하고 인스턴스를 만들어 PriorityQueue에 넣어 주어도 됩니다.
 
-~~~
+~~~java
 PriorityQueue<Integer> myQueue = new PriorityQueue<>(dates.length, new Comparator<Integer>() {
     @Override
     public int compare(Integer p1, Integer p2) {
@@ -120,7 +120,7 @@ PriorityQueue<Integer> myQueue = new PriorityQueue<>(dates.length, new Comparato
 ~~~
 
 ## Solution.java
-~~~
+~~~java
 import java.util.*;
 
 class Solution {

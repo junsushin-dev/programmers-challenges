@@ -46,7 +46,7 @@ priorities	|  location	|  return
 초기에 주어진 location 값으로 아래에서는 요청한 작업(Job target)의 reference를 최초에 기억하고, Queue에서 처리되는 작업과 비교하여 일치할 경우 while문을 끝내는 방법을 사용하였습니다. 
 
 ## Solution.java
-~~~
+~~~java
 import java.util.*;
 
 class Solution {

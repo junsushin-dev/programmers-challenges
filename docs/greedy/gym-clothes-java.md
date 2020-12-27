@@ -52,13 +52,13 @@ Greedy Algorithm 을 사용하기 위해서는 현재 상태에서의 최적으�
 - 모든 체육복이 할당되어 최적의 상황을 달성하였습니다. 
 
 위와 같이 번호 순서대로 할당을 하기 위해서 입력받은 배열들을 정렬해줍니다. 
-~~~
+~~~java
 Arrays.sort(lost);
 Arrays.sort(reserve);
 ~~~
 
 List의 .contains() 함수를 쓰기 위해서 배열의 내용물을 리스트로 옮겨줍니다. 
-~~~
+~~~java
 List<Integer> lostList = new ArrayList();
 for(int i = 0; i < lost.length; i++) {
     lostList.add(lost[i]);
@@ -71,7 +71,7 @@ for(int i = 0; i < reserve.length; i++) {
 ~~~
 
 체육복을 여유분이 있으면서 도난당한 학생을 빌려줄 수 없으므로, 두 List에 모두 존재하는 번호를 찾아내어 양 리스트에서 제거해줍니다. 
-~~~
+~~~java
 List<Integer> lostAndFound = new ArrayList();
 for(Integer r: reserveList) {
     if(lostList.contains(r)) {
@@ -86,7 +86,7 @@ for(Integer r: lostAndFound) {
 ~~~
 
 위에서 말한 규칙과 같이 번호가 낮은 학생부터 번호가 낮은 체육복을 우선으로 가져갑니다. 
-~~~
+~~~java
 for(Integer r: reserveList) {
     if(lostList.contains(r-1)) {
         int idx = lostList.indexOf(r-1);
@@ -103,13 +103,13 @@ for(Integer r: reserveList) {
 ~~~
 
 전체 학생의 숫자 n 에서 체육복을 끝까지 받지 못한 학생의 수를 빼면 체육시간에 참여할 수 있는 학생의 수를 구할 수 있습니다. 
-~~~
+~~~java
 int answer = n - lostList.size();
 return answer;
 ~~~
 
 ## Solution.java
-~~~
+~~~java
 import java.util.*;
 
 class Solution {

@@ -78,12 +78,12 @@ merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunct
 
 아래 풀이에서는 기존에 키값이 없을 경우 1개의 의상이 존재하게 되므로 1을 넣고, 기존에 키값이 있을 경우 기존의 value값에 1을 더하는 lambda 함수를 정의하여 넣었습니다.
 
-~~~
+~~~java
 numClothes.merge(clothes[i][1], 1, (Integer v1, Integer v2) -> v1 + 1);
 ~~~
 
 ## Solution.java
-~~~
+~~~java
 import java.util.HashMap;
 
 class Solution {

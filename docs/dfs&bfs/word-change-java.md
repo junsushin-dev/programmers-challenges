@@ -41,7 +41,7 @@ target인 cog는 words 안에 없기 때문에 변환할 수 없습니다.
 단어과 단어들 간의 변환관계를 그래프의 정점과 간선으로 표현하여 풀 수 있는 문제입니다. 서로 하나의 알파벳이 차이나는 단어들을 graph 상에서 연결된 것으로 표현하고, 완성된 graph에서 begin 단어에서 출발하여 breadth-first-search(BFS)로 target 단어까지의 최소거리를 순회하면 문제를 해결할 수 있습니다.
 
 단어 간의 연결관계를 체크하기 위해서 차이나는 알파벳의 갯수를 체크하는 connection 함수를 정의하였습니다.
-~~~
+~~~java
 public boolean connection(String s1, String s2) {
     int diff = 0;
     for(int i = 0; i < s1.length(); i++) {
@@ -54,7 +54,7 @@ public boolean connection(String s1, String s2) {
 
 위 connection 함수를 이용해서 begin 단어와 words에 포함된 단어들에 대해서 그래프를 구축합니다. 그래프는 이 경우 인접 리스트 방식으로 표현하였습니다. 인접 리스트는 각 정점(문제의 경우에는 단어)에 대해서 자신과 인접한 정점을 리스트로 저장합니다.
 
-~~~
+~~~java
 HashMap<String, List<String>> graph = new HashMap<>();
 
 graph.put(begin, new ArrayList<String>());
@@ -92,7 +92,7 @@ cog - [dog, log]
 
 위와 같이 구축된 그래프를 BFS를 통해 순회하면서 begin에서 출발하여 각 정점에 도달하는 거리를 체크합니다. BFS의 경우 현재 정점에 인접하였고, 방문하지 않은 정점을 queue에 넣어가면서 처리하는 방식으로 구현할 수 있습니다.
 
-~~~
+~~~java
 public int bfs(String begin, String target, HashMap<String, List<String>> graph) {
     HashMap<String, Integer> distance = new HashMap<>();
     for(String key: graph.keySet()) {
@@ -123,7 +123,7 @@ public int bfs(String begin, String target, HashMap<String, List<String>> graph)
 HashMap.getOrDefault 함수를 사용하면 키가 존재하지 않는 경우에 기본값을 반환하도록 할 수 있습니다. 이 문제의 경우 words 안에 target 단어가 존재하지 않아서 graph 또는 distance 상에서 target 단어가 key로 존재하지 않는 경우를 처리하기에 좋습니다. 
 
 ## Solution.java
-~~~
+~~~java
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.LinkedList;

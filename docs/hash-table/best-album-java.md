@@ -51,7 +51,7 @@ pop 장르는 3,100회 재생되었으며, pop 노래는 다음과 같습니다.
 
 아래 문제풀이에서는 우선 이 분류를 해결하기 위해서 Song과 Genre라는 클래스를 정의하였습니다.
 
-~~~
+~~~java
 class Genre implements Comparable<Genre>{
     String name;
     List<Song> songs;
@@ -80,7 +80,7 @@ class Genre implements Comparable<Genre>{
 ~~~
 장르는 장르에 속한 노래들의 리스트를 가지고 있으며, 재생횟수의 총합을 parameter로 가지고 있습니다.
 
-~~~
+~~~java
 class Song implements Comparable<Song>{
     int num;
     int plays;
@@ -102,7 +102,7 @@ class Song implements Comparable<Song>{
 위와 같이 클래스를 정의한 이후에는, 주어진 input을 처리하여 genres에 들어있는 장르명 별로 노래를 분류하기 위해서 HashMap을 이용하였습니다.
 
 HashMap<String, Genre> : 장르의 이름 String을 Genre 클래스로 맵핑
-~~~
+~~~java
 HashMap<String, Genre> genreMap = new HashMap<>();
 
 for(String g: genres) {
@@ -117,7 +117,7 @@ for(int i = 0; i < genres.length; i++) {
 
 이후에는 쉬운 정렬을 위해서 Genre 객체들을 별도의 리스트에 넣어줍니다.
 
-~~~
+~~~java
 List<Genre> genreList = new ArrayList<>();
 for(Genre g: genreMap.values()) {
     g.sortSongs();
@@ -129,7 +129,7 @@ Collections.sort(genreList, Collections.reverseOrder());
 
 마지막으로는 문제의 규칙에 따라서 우선순위가 높은 장르별로 2개(장르 안 노래가 하나일 경우 1개)씩 노래의 번호를 기록해줍니다.
 
-~~~
+~~~java
 List<Integer> ansList = new ArrayList<>();
 
 for(Genre g: genreList) {
@@ -149,14 +149,14 @@ for(Genre g: genreList) {
 
 Collection 인터페이스를 구현한 클래스의 경우에는 내림차순 정렬을 다음과 같이 이용할 수 있습니다.
 
-~~~
+~~~java
 Collections.sort(정렬대상, Collections.reverseOrder())
 ~~~
 
 Java의 기본적인 정렬 규칙은 오름차순이기 때문에, 역방향 정렬의 경우 내림차순 정렬이 됩니다.
 
 ## Solution.java
-~~~
+~~~java
 import java.util.*;
 
 class Solution {

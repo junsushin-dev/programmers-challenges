@@ -46,7 +46,7 @@ name | return
 
 알파벳은 26가지가 존재하기 때문에, A에서부터 해당 알파벳 순번까지의 거리와, 26에서 이 거리를 뺀 숫자를 비교하면 쉽게 최적의 수를 찾을 수 있습니다.  
 
-~~~
+~~~java
 int answer = 0;
 
 for(char ch: name.toCharArray()) {
@@ -87,12 +87,12 @@ java의 primitive type 중 하나인 char의 경우에는 더하기, 빼기를 �
 'G'의 ASCII Code: 71
 
 'A' ~ 'G' 까지의 거리: 71 - 65 = 6
-~~~
+~~~java
 int diff = 'G' - 'A';
 ~~~
 
 ## Solution.java
-~~~
+~~~java
 class Solution {
     public int solution(String name) {
         int answer = 0;

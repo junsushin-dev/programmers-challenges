@@ -98,7 +98,7 @@ Comparator를 선언하여 이용할 경우, 아래와 같이 같은 클래스�
 하나의 정렬 방법만이 필요할 경우, Comparator 대신 클래스가 Comparable을 implement 하도록 해주면 별도의 Comparator 선언 없이도 각종 비교 기능을 사용할 수 있습니다.
 
 ## Solution.java
-~~~
+~~~java
 import java.util.PriorityQueue;
 import java.util.Comparator;
 import java.util.ArrayList;

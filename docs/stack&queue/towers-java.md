@@ -68,7 +68,7 @@ heights |	return
 위의 사례와 같이 stack 내부에 항상 작은 값이 head 쪽으로 위치하게 되며, 따라서 다음 탑을 만났을때 head의 값이 탑의 높이보다 클때까지 pop을 해주면 된다는 것을 알 수 있습니다. stack의 더 안쪽의 원소들은 자동적으로 현재 head보다 크기 때문에 head가 현재 탑보다 높을 경우 자동으로 현재 탑보다 높은 값들이어서 체크할 필요가 없습니다.
 
 신호의 송신위치, 수신위치를 기록하기 위해서 새로운 클래스인 Signal을 정의하였습니다.
-~~~
+~~~java
 class Signal {
     public int origin;
     public int height;
@@ -84,7 +84,7 @@ class Signal {
 int[] 배열의 경우 초기값이 0으로 세팅되므로, stack에서 pop되지 않은(=수신되지 않은) Signal들은 자동으로 answer 배열에서 값이 업데이트되지 않아서 문제의 요구사항과 같이 0의 값을 가지게 됩니다.
 
 ## Solution.java
-~~~
+~~~java
 import java.util.*;
 
 class Solution {

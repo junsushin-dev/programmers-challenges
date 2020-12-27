@@ -35,7 +35,7 @@ triangle | result
 위 방법을 구현하기 위해서 최초에 주어진 삼각형의 모양을 clone()으로 복사하여 DP를 위한 2차원 배열을 마련하였습니다. 그 이후에는 꼭대기 층을 제외한 층부터 위층의 값을 체크하면서 최대값을 갱신해나가면 문제를 해결할 수 있습니다. 
 
 ## Solution.java
-~~~
+~~~java
 class Solution {
     public int solution(int[][] triangle) {
         int[][] DP = triangle.clone();

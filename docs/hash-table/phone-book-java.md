@@ -52,7 +52,7 @@ Hash 함수를 사용하고자 한다면, 비교하게 되는 전화번호의 St
 String 비교시에는 == 연산자가 아닌 .equals 함수를 이용해야 문자열을 제대로 비교할 수 있습니다. == 연산자는 해당 변수가 같은 reference(C의 경우 포인터)를 가리키고 있는 지 체크하고, .equals 함수는 문자열의 내용을 실제로 비교하여 다른 referece를 가지더라도 동일한 문자열인지를 체크해줄 수 있습니다. 
 
 ## Solution.java
-~~~
+~~~java
 import java.util.*;
 
 class Solution {

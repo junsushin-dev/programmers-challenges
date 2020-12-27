@@ -68,7 +68,7 @@ bridge_length	weight	| truck_weights	| return
 ## 팁
 
 ## Solution.java
-~~~
+~~~java
 import java.util.*;
 
 class Solution {

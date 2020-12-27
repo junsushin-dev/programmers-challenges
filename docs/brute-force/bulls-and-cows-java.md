@@ -56,7 +56,7 @@ baseball | return
 
 우선은 주어진 규칙에 맞도록 0이 포함되지 않고, 중복된 숫자가 없도록 유효한 후보들을 true로 체크해 주었습니다.
 
-~~~
+~~~java
 for(int i = 1; i < 10; i++) {
     for(int j = 1; j < 10; j++) {
         if(i == j) continue;
@@ -72,7 +72,7 @@ for(int i = 1; i < 10; i++) {
 
 다음으로는 후보 숫자와 baseball에서 주어진 숫자를 비교하여 스트라이크와 볼 갯수를 계산해내는 메서드를 정의해주어야 합니다. 하기 문제풀이에서는 아래의 함수들이 그 역할을 담당하고 있습니다.
 
-~~~
+~~~java
 public int strike(int guess, int question);
 public int ball(int guess, int question);
 ~~~
@@ -95,7 +95,7 @@ java에서 boolean array를 선언할 경우 boolean 자료형의 기본값인 f
 숫자 야구의 영문 게임명은 [bulls and cows](https://en.wikipedia.org/wiki/Bulls_and_Cows) 입니다.
 
 ## Solution.java
-~~~
+~~~java
 import java.util.*;
 
 class Solution {

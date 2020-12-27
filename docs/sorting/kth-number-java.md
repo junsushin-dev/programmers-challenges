@@ -37,7 +37,7 @@ array	| commands	| return
 
 문제에서 요구하는 배열 slicing과 배열의 정렬을 그대로 구현하면 되는 문제입니다. 자바의 경우 내장된 Arrays.copyOfRange로 주어진 구간을 자른 새로운 배열을 만들 수도 있지만, 아래 문제풀이에서는 별도로 직접 배열을 자르는 함수를 정의하여 사용하였습니다.
 
-~~~
+~~~java
 public int[] slice(int[] array, int from, int to) {
     int length = to - from + 1;
     int[] ret = new int[length];
@@ -50,7 +50,7 @@ public int[] slice(int[] array, int from, int to) {
 
 원하는 구간의 배열을 얻은 이후에는 간단하게 Arrays.sort 함수를 이용하여 배열을 정렬해주고, 그 다음 주어진 index에 해당하는 원소를 반환하면 됩니다.
 
-~~~
+~~~java
 for(int i = 0; i < commands.length; i++) {
     int[] sliced = slice(array, commands[i][0], commands[i][1]);
     Arrays.sort(sliced);
@@ -63,7 +63,7 @@ return answer;
 전반적으로 정렬 카테고리의 문제 중에 가장 쉬운 난이도인 문제이기 때문에, 문제에서 요구하는 사항을 그대로 구현하기만 하면 시간, 공간복잡도에 대해서는 고민하지 않아도 문제를 해결할 수 있습니다.
 
 ## Solution.java
-~~~
+~~~java
 import java.util.*;
 
 class Solution {

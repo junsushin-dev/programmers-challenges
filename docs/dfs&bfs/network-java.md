@@ -44,7 +44,7 @@ n | computers	| return
   - 최종적으로 모든 노드가 Group1 또는 Group4로 분류됨
 
 ## Solution.java
-~~~
+~~~java
 import java.util.HashSet;
 
 class Solution {

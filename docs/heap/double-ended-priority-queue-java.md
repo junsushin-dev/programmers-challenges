@@ -56,7 +56,7 @@ operations | return
 아래 풀이에서는 Java.util에 내장된 PriorityQueue를 이용하여 MinMaxHeap 클래스를 새로 정의하고, 상단 Wikipedia 페이지에 정의된 이중우선순위큐의 함수들을 구현하였습니다. 입력값을 간단히 파싱해준 후, 구현한 클래스를 통해서 문제를 해결할 수 있습니다.  
 
 ## Solution.java
-~~~
+~~~java
 import java.util.PriorityQueue;
 import java.util.Comparator;
 

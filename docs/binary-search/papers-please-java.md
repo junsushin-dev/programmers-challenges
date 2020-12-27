@@ -43,13 +43,13 @@ Long은 -2<sup>63</sup> ~ 2<sup>63</sup>-1 까지의 값을 처리할 수 있기
 
 심사관과 심사관 별로 1명 처리에 필요한 시간이 times로 주어진 상태에서, 우선 최선의 상황(모든 심사관이 1분에 1명을 처리)을 가정하여 처리시간의 lower bound를 설정해줍니다.
 
-~~~
+~~~java
 long from = n / times.length;
 ~~~
 
 최악의 상황인 경우 위와 같이 모든 심사관이 10<sup>9</sup>분에 한명을 처리합니다. 이 경우 처리시간의 upper bound는 다음과 같이 구할 수 있습니다. 10<sup>9</sup>분이 얼마나 긴 시간인지 궁금해서 찾아봤는데, 약 1901년 정도네요. 엄청난 심사관입니다.
 
-~~~
+~~~java
 long to = 1000000000L * n / times.length;
 ~~~
 
@@ -70,7 +70,7 @@ mid = (from + to) / 2 와 같이 구간의 중간에 점을 잡은 이후, 이 �
 위와 같이 탐색을 진행하면 탐색구간을 좁혀가서 O(log<sub>2</sub>n)의 시간복잡도로 최적의 해를 찾을 수 있습니다.
 
 ## Solution.java
-~~~
+~~~java
 class Solution {
     public long solution(int n, int[] times) {
         long from = n / times.length;

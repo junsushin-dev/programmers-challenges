@@ -46,7 +46,7 @@ Dynamic Programming 의 단골 소재인 피보나치 수열을 이용하는 문
 위와 같이 Dynamic Programming을 구현하기 위해서, 배열 또는 리스트를 선언하여 N번째 피보나치 수열에 해당하는 수를 계속적으로 저장하면서 나가면 O(n) 의 시간복잡도로 문제를 해결할 수 있습니다.
 
 ## Solution.java
-~~~
+~~~java
 import java.util.ArrayList;
 
 class Solution {

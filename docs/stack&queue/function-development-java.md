@@ -52,7 +52,7 @@ progresses | speeds | return
 문제에서 한꺼번에 나오는 작업의 갯수들만을 요구하고 있기 때문에, 이런식으로 한번에 나오는 작업의 갯수만을 세고 저장하면 문제의 요구사항을 만족할 수 있습니다. 
 
 ## Solution.java
-~~~
+~~~java
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.List;

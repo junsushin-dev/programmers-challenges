@@ -95,7 +95,7 @@ from = 3
 
 이 경우 4를 대입한다면 조건을 만족하지 못하기 때문에, 이를 체크하고 만족할 경우 to를, 만족하지 못할 경우 from을 답으로 선택하면 이분탐색을 마무리할 수 있습니다.
 
-~~~
+~~~java
 while(from < to) {
     int mid = (from + to) / 2;
     if( numRocks(dists, mid, rocks.length) > n) {
@@ -111,7 +111,7 @@ return (numRocks(dists, to, rocks.length) <= n) ? to : from;
 ~~~
 
 ## Solution.java
-~~~
+~~~java
 import java.util.*;
 
 class Solution {

@@ -54,7 +54,7 @@ index | 현재까지 논문 수 | 현재 논문 인용 수 | H-Index | 최대 H-
 
 정렬의 경우 java의 내장된 sort 기능을 사용할 수 있습니다. java에 내장된 정렬은 오름차순 정렬이 기본이기 때문에, 내림차순 정렬을 위해서는 내림차순임을 알려주는 Comparator를 이용해야 합니다. 혹은 오름차순 정렬 이후, 배열의 맨 뒤부터 보는 방식으로 내림차순으로 인용 수를 검토할 수 있습니다.
 
-~~~
+~~~java
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -64,7 +64,7 @@ Arrays.sort(citations, Collections.reverseOrder());
 아래 문제풀이에서는 연습 목적으로 java의 sort 기능 대신 간단한 내림차순 merge sort를 직접 구현하여 풀이하였으니 참고하시기 바랍니다.  
 
 ## Solution.java
-~~~
+~~~java
 class Solution {
     public int solution(int[] citations) {
         Sorter mySorter = new Sorter();

@@ -78,7 +78,7 @@ n	| results	| return
 Floyd-Warshall 알고리즘은 O(n<sup>3</sup>) 시간복잡도를 가지기 때문에, n이 많아질 경우 피하는 것이 좋습니다. 이 문제의 경우 n(선수의 수)가 100이하로 제한되어있기 때문에, 최악의 경우에도 100<sup>3</sup> = 1,000,000 번 정도의 상대적으로 적은 계산횟수가 필요하기 때문에 이 알고리즘을 사용할 수 있었습니다.
 
 ## Solution.java
-~~~
+~~~java
 class Solution {
     public int solution(int n, int[][] results) {
         boolean[][] graph = new boolean[n][n];
