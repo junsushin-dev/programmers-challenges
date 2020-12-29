@@ -69,6 +69,8 @@
 
 [섬 연결하기 - java](docs/greedy/connect-islands.md)
 
+[단속카메라 - java](docs/greedy/speed-camera.md)
+
 ### 동적계획법(Dynamic Programming)
 
 [타일 장식물 - java](docs/dynamic-programming/tile-decorations-java.md)
