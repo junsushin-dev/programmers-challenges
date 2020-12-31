@@ -85,6 +85,7 @@
 
 [단어 변환 - java](docs/dfs&bfs/word-change-java.md)
 
+[여행경로 - java](docs/dfs&bfs/travel-routes-java.md)
 ### 이분탐색
 
 [입국심사 - java](docs/binary-search/papers-please-java.md)
