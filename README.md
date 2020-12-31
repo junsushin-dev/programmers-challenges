@@ -55,7 +55,7 @@
 
 [숫자 야구 - java](docs/brute-force/bulls-and-cows-java.md)
 
-[카펫 - java](docs/brute-force/carpet.md)
+[카펫 - java](docs/brute-force/carpet-java.md)
 
 ### 탐욕법(Greedy)
 
@@ -65,11 +65,11 @@
 
 [조이스틱 - java](docs/greedy/joystick-java.md)
 
-[구명보트 - java](docs/greedy/life-boat.md)
+[구명보트 - java](docs/greedy/life-boat-java.md)
 
-[섬 연결하기 - java](docs/greedy/connect-islands.md)
+[섬 연결하기 - java](docs/greedy/connect-islands-java.md)
 
-[단속카메라 - java](docs/greedy/speed-camera.md)
+[단속카메라 - java](docs/greedy/speed-camera-java.md)
 
 ### 동적계획법(Dynamic Programming)
 
@@ -77,7 +77,7 @@
 
 [정수 삼각형 - java](docs/dynamic-programming/integer-triangle-java.md)
 
-[등굣길 - java](docs/dynamic-programming/way-to-school.md)
+[등굣길 - java](docs/dynamic-programming/way-to-school-java.md)
 
 ### 깊이/너비 우선탐색(DFS/BFS)
 
