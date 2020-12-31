@@ -79,6 +79,8 @@
 
 [등굣길 - java](docs/dynamic-programming/way-to-school-java.md)
 
+[N으로 표현 - java](docs/dynamic-programming/represent-with-Ns-java.md)
+
 ### 깊이/너비 우선탐색(DFS/BFS)
 
 [네트워크 - java](docs/dfs&bfs/network-java.md)
