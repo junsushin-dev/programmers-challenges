@@ -88,3 +88,25 @@ class Solution {
     }
 }
 ~~~
+
+## solution.js
+~~~javascript
+function solution(progresses, speeds) {
+    let day = 0;
+    let count = 0;
+    const answer = [];
+    progresses.forEach((initProgress, i) => {
+        const speed = speeds[i];
+        const progress = initProgress + day * speed;  
+        if(progress >= 100) return count++;
+        answer.push(count);
+        count = 0;
+        const offset = Math.ceil((100 - progress) / speed);
+        day += offset;
+        return count++;
+    })
+    answer.push(count);
+    answer.shift();
+    return answer;
+}
+~~~

@@ -115,7 +115,7 @@ participant을 find 함수로 순회하면서 name에 맞는 완주자 수를 �
 
 리턴된 이름을 solution 함수의 결과로 반환하면 문제를 해결할 수 있습니다. 
 
-## Solution.js - 30분 소요
+## solution.js - 30분 소요
 ~~~javascript
 function solution(participant, completion) {
     const cMap = {};

@@ -25,7 +25,7 @@
 
 [탑 - Java](docs/stack&queue/towers-java.md)
 
-[기능개발 - Java](docs/stack&queue/function-development-java.md)
+[기능개발 - Java, JavaScript](docs/stack&queue/function-development.md)
 
 [프린터 - Java](docs/stack&queue/printer-java.md)
 
