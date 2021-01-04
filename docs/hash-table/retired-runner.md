@@ -36,7 +36,7 @@ vinko는 참여자 명단에는 있지만, 완주자 명단에는 없기 때문�
 
 mislav는 참여자 명단에는 두 명이 있지만, 완주자 명단에는 한 명밖에 없기 때문에 한명은 완주하지 못했습니다.
 
-## 해설
+## 해설 - Java
 
 해시 카테고리의 가장 간단한 1번 문제입니다. 문자열(String)으로 이루어진 리스트에서 처음 리스트에는 포함되었지만, 두번째 리스트에는 포함되지 않은 이름을 찾으면 됩니다. 여기서 각 리스트 내부의 모든 이름들이 다르다면 간단히 문자열 비교를 통해서도 문제를 풀 수 있겠지만, 문제의 요구사항에 따라 <strong>동명이인</strong>이 존재할 수 있기 때문에 해시맵을 사용해야 합니다.
 
@@ -100,5 +100,26 @@ class Solution {
 
         return answer;
     }
+}
+~~~
+
+## 해설 - JavaScript
+JavaScript는 Map으로 작동하는 Object가 내장되어 있기 때문에, 위 로직을 더 간편하게 짤 수 있습니다. 
+completion을 순회하면서 {'name': 완주자 수} 형태의 객체를 만들어 줍니다. 
+participant을 find 함수로 순회하면서 name에 맞는 완주자 수를 하나씩 줄여줍니다. 
+
+완주자를 줄이는 과정에서 
+1. key값이 존재하지 않거나 (해당 이름을 가진 완주자가 없음)
+2. 완주자 숫자가 0 이하로 줄어드는 경우 (해당 이름을 가진 참가자가 완주자보다 많음)
+둘 중 하나의 조건이 발생한 경우, 답을 찾았으므로 find의 콜백함수에서 true 값을 리턴해서 찾은 이름을 find 함수의 결과로 리턴합니다. 
+
+리턴된 이름을 solution 함수의 결과로 반환하면 문제를 해결할 수 있습니다. 
+
+## Solution.js - 30분 소요
+~~~javascript
+function solution(participant, completion) {
+    const cMap = {};
+    completion.map((name) => cMap[name] = (cMap[name] | 0) + 1);
+    return participant.find((name) => (cMap[name] === undefined) | (--cMap[name] < 0));
 }
 ~~~
