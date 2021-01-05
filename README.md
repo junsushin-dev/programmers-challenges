@@ -41,7 +41,7 @@
 
 ### 정렬
 
-[K번째수 - Java](docs/sorting/kth-number-java.md)
+[K번째수 - Java, JavaScript](docs/sorting/kth-number.md)
 
 [가장 큰 수 - Java](docs/sorting/biggest-number-java.md)
 

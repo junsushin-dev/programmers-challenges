@@ -88,3 +88,18 @@ class Solution {
     }
 }
 ~~~
+
+## 해설 - JavaScript
+Array.prototype.sort()는 요소를 유니코드 문자열로 변환해서 정렬합니다. 이에 따라서 80, 9를 정렬할 경우 '8'이 '9'를 유니코드 문자열에서 앞서기 때문에 80, 9 순으로 정렬됩니다. 명시적으로 비교 함수를 제공하여 sort를 정상적으로 수행해야 합니다. 
+## solution.js
+~~~javascript
+function solution(array, commands) {
+    var answer = [];
+    for(let command of commands) {
+        const arr = array.slice(command[0] - 1, command[1]);
+        arr.sort((a, b) => a - b);
+        answer.push(arr[command[2] - 1]);
+    }
+    return answer;
+}
+~~~
