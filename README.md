@@ -51,7 +51,7 @@
 
 [모의고사 - Java](docs/brute-force/mock-exam-java.md)
 
-[소수 찾기 - Java](docs/brute-force/finding-primes-java.md)
+[소수 찾기 - Java, JavaScript](docs/brute-force/finding-primes.md)
 
 [숫자 야구 - Java](docs/brute-force/bulls-and-cows-java.md)
 

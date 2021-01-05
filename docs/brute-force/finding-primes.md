@@ -118,3 +118,39 @@ class Solution {
     }
 }
 ~~~
+
+## 해설 - JavaScript
+자바스크립트도 똑같은 로직을 구현하여 해결하면 됩니다. 배열에서 특정 원소를 제거하는 것을 spread operator로 해결할 수 있습니다. 
+for... in 문의 경우에는 [Array에 사용하는 것이 추천되지 않으므로](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in#Array_iteration_and_for...in)사용하지 않는 것이 좋습니다. 
+
+## solution.js - 소요시간 30분
+~~~javascript
+const checkPrime = (num) => {
+    if(num < 2) return false;
+    for(let i = 2; i < num; i++) {
+        if(num % i === 0) return false;
+    }
+    return true;
+}
+
+const permutation = (str, arr, res) => { 
+    if(arr.length === 0) {
+        if(str.length === 0) return;
+        const num = parseInt(str, 10);
+        if(checkPrime(num)) res.add(num);
+        return;
+    }
+    for(let idx = 0; idx < arr.length; idx++) {
+        const num = arr[idx];
+        const newArr = [...arr.slice(0, idx), ...arr.slice(idx + 1)];
+        permutation(str, newArr, res);
+        permutation(str + num, newArr, res); 
+    }
+}
+
+function solution(numbers) {
+    const answerSet = new Set();
+    permutation("", [...numbers], answerSet);
+    return answerSet.size;
+}
+~~~
