@@ -135,3 +135,39 @@ class Solution {
     }
 }
 ~~~
+
+## 해설 - JavaScript
+Java 풀이와 로직은 똑같습니다. 주의해야 할 점은 다음과 같습니다. 
+- memo 배열의 set로 채울 경우, ```fill(new Set())```을 할 경우 모두 같은 Set로 채워지게 됩니다. 
+- JavaScript의 나눗셈은 나머지를 무시하지 않기 때문에 Math.floor()로 소수점 이하를 버려주어야 합니다. 
+
+## solution.js
+~~~javascript
+const iterNum = (num, iter) => {
+    return parseInt(num.toString().repeat(iter));
+}
+
+function solution(N, number) {
+    const memo = new Array(9).fill().map(() => new Set());
+    for(let i = 1; i < 9; i++) {
+        memo[i].add(iterNum(N, i));
+        for(let j = 1; j < i; j++) {
+            let k = i - j;
+            for(const fst of memo[j]) {
+                for(const snd of memo[k]) {
+                    const sum = fst + snd;
+                    const sub = fst - snd;
+                    const mul = fst * snd;
+                    const div = Math.floor(fst / snd);
+                    [sum, sub, mul, div].forEach(item => {
+                        if(item > 0) memo[i].add(item);
+                    });
+                }
+            }
+        }
+        if(memo[i].has(number)) return i;
+    }
+    var answer = -1;
+    return answer;
+}
+~~~
