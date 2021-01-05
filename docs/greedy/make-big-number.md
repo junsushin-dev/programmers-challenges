@@ -76,3 +76,35 @@ class Solution {
     }
 }
 ~~~
+
+## 해설 - JavaScript
+기본적인 논리는 위 Java 풀이법과 같습니다. 
+JavaScript의 string 연산은 기본적으로 immutable 합니다. 새로운 객체 생성에 overhead가 발생하므로, 효율적인 방식으로 위 로직을 구현해 주어야 합니다. 계속 string을 업데이트 해주기 보다는, stack을 선언하고 문자를 하나씩 넣어주는 방식으로 처리하였습니다. 
+
+1. stack이 비어있다면 현재 문자열을 넣고,
+2. 아니라면 stack의 head를 보고, 현재 char보다 작은 경우 pop 시키며 k를 1씩 줄여줍니다. 
+
+이런식으로 k가 0이 되거나, char를 모두 순회할때까지 처리하면 됩니다. 순회 이후에는 stack의 문자들을 join해서 정답으로 만들어주면 됩니다. 
+
+## solution.js - 45분 소요
+~~~javascript
+function solution(number, k) {
+    const stack = [];
+    for(let char of number) {
+        if(k === 0) {
+            stack.push(char);
+            continue;
+        }
+        if(stack.length === 0) {
+            stack.push(char);
+            continue;
+        }
+        while(stack.length > 0 && k > 0 && stack[stack.length - 1] < char) {
+            stack.pop();
+            k--;
+        }
+        stack.push(char);
+    }
+    return stack.slice(0, stack.length - k).join("");
+}
+~~~

@@ -61,7 +61,7 @@
 
 [체육복 - Java](docs/greedy/gym-clothes-java.md)
 
-[큰 수 만들기 - Java](docs/greedy/make-big-number-java.md)
+[큰 수 만들기 - Java, JavaScript](docs/greedy/make-big-number.md)
 
 [조이스틱 - Java](docs/greedy/joystick-java.md)
 
