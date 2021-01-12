@@ -35,7 +35,7 @@
 
 [라면공장 - Java](docs/heap/ramen-factory-java.md)
 
-[디스크 컨트롤러 - Java](docs/heap/disk-controller-java.md)
+[디스크 컨트롤러 - Java, JavaScript](docs/heap/disk-controller.md)
 
 [이중우선순위큐 - Java](docs/heap/double-ended-priority-queue-java.md)
 

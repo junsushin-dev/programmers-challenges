@@ -186,3 +186,187 @@ class Solution {
     }
 }
 ~~~
+
+## 해설 - javascript
+JavaScript에는 내장된 heap 자료구조가 없기 때문에 직접 구현해야 합니다. heap을 구현한 후의 풀이과정은 Java와 같습니다. 
+Heap을 구현할 때는, 비교 연산자 처리에 신경쓰시기 바랍니다. 제가 고전했던 부분은 아래와 같습니다. 
+
+~~~javascript
+if (this.comparator(leftChild, rightChild) < 0 && this.comparator(leftChild, parent) < 0) {
+    this.swap(index, leftChildIndex);
+    this.heapifyDown(leftChildIndex);
+    return;
+}
+if (this.comparator(rightChild, leftChild) < 0 && this.comparator(rightChild, parent) < 0) {
+    this.swap(index, rightChildIndex);
+    this.heapifyDown(rightChildIndex);
+    return;
+}
+~~~
+heapifyDown 함수에서 양쪽 child가 모두 존재할 경우의 비교 연산 부분입니다. parent, child 1, child 2를 비교해서 가장 최소값을 가진 노드를 부모로 교체해주어야 합니다. 어떤 logic이 잘못 되었는지 보이시나요?
+
+leftChild와 rightChild가 같은 경우가 예외처리되어 있지 않아서 오류가 발생하였습니다. 
+- 부모: 3
+- 자식1: 2
+- 자식2: 2
+
+위와 같이 트리가 구성되어 있을 때, 두 자식 노드의 값이 같기 때문에 둘중 아무거나 골라서 부모와 자리를 교체해주어야 합니다. 하지만 이전 logic에서는 무조건 left < right 또는 right < left 를 요구했기 때문에, 위와같은 경우에 부모 노드와 교체가 이루어지지 않았습니다. 
+
+~~~javascript
+if (this.comparator(leftChild, rightChild) <= 0 && this.comparator(leftChild, parent) < 0) {
+    this.swap(index, leftChildIndex);
+    this.heapifyDown(leftChildIndex);
+    return;
+}
+if (this.comparator(rightChild, leftChild) <= 0 && this.comparator(rightChild, parent) < 0) {
+    this.swap(index, rightChildIndex);
+    this.heapifyDown(rightChildIndex);
+    return;
+}
+~~~
+비교 연산자가 leftChild == rightChild인 경우를 제대로 처리하도록 변경하면 heap이 정상적으로 동작하고 테스트 케이스가 모두 통과되는 것을 볼 수 있습니다. 
+
+## solution.js - 소요시간 3시간+
+~~~javascript
+function solution(jobs) {
+    const todo = new MinHeap((jobA, jobB) => jobA.reqTime - jobB.reqTime);
+    const queue = new MinHeap((jobA, jobB) => jobA.duration - jobB.duration);
+    const turnarounds = [];
+     
+    jobs.map(params => {
+        const job = new Job(...params);
+        todo.add(job); 
+    });
+    
+    let time = 0;
+    let curr = undefined;
+    
+    while(!todo.isEmpty() || !queue.isEmpty() || curr) {
+        // move jobs from todo to queue
+        while(!todo.isEmpty() && todo.peek().reqTime <= time) {
+            const job = todo.pop();
+            queue.add(job);
+        }
+        
+        // pick job to process
+        if(!curr && !queue.isEmpty()) {
+            curr = queue.pop();
+        }
+        
+        // process job
+        if(curr) {
+            time += curr.duration;
+            turnarounds.push(time - curr.reqTime);
+            curr = undefined;
+        } else {
+            time += 1;
+        }
+    }
+    
+    const answer = Math.floor(turnarounds.reduce((acc, curr) => acc + curr) / jobs.length);
+    return answer;
+}
+
+class Job {
+    constructor(reqTime, duration) {
+        this.reqTime = reqTime;
+        this.duration = duration;
+    }
+    
+    finish(endTime) {
+        this.endTime = endTime;
+    }
+    
+    getTurnaround() {
+        return this.endTime - this.reqTime;
+    }
+}
+
+class MinHeap {
+    static HEAD_INDEX = 1;
+
+    constructor(comparator) {
+        this.nodes = [null]; // stub to make index start with 1
+        this.comparator = comparator;
+    }
+    
+    add(node) {
+        this.nodes.push(node);
+        const lastIndex = this.size();
+        this.heapifyUp(lastIndex);
+    }
+    
+    heapifyUp(index) {
+        if(index <= MinHeap.HEAD_INDEX) return;
+        const child = this.nodes[index];
+        const parentIndex = Math.floor(index / 2);
+        const parent = this.nodes[parentIndex];
+        if(this.comparator(child, parent) < 0) { // child has prioirty
+            this.swap(index, parentIndex);
+            this.heapifyUp(parentIndex);
+        }
+    }
+    
+    heapifyDown(index) {
+        if(index > this.size()) return;
+        const parent = this.nodes[index];
+        const leftChildIndex = index * 2;
+        const rightChildIndex = index * 2 + 1;
+        const leftChild = this.nodes[leftChildIndex];
+        const rightChild = this.nodes[rightChildIndex];
+        
+        // no child
+        if(!leftChild) return;
+        
+        // only left child
+        if(leftChild && !rightChild) {
+            if (this.comparator(leftChild, parent) <= 0) {
+                this.swap(index, leftChildIndex);
+                // this.heapifyDown(leftChildIndex);
+                return;
+            }
+        }
+        
+        // both childs exist
+        if(leftChild && rightChild) {
+            if (this.comparator(leftChild, rightChild) <= 0 && this.comparator(leftChild, parent) < 0) {
+                this.swap(index, leftChildIndex);
+                this.heapifyDown(leftChildIndex);
+                return;
+            }
+            if (this.comparator(rightChild, leftChild) <= 0 && this.comparator(rightChild, parent) < 0) {
+                this.swap(index, rightChildIndex);
+                this.heapifyDown(rightChildIndex);
+                return;
+            }
+        }
+    }
+    
+    swap(firstIndex, secondIndex) {
+        const temp = this.nodes[firstIndex];
+        this.nodes[firstIndex] = this.nodes[secondIndex];
+        this.nodes[secondIndex] = temp;
+    }
+    
+    pop() {
+        if(this.size() === 0) return undefined;
+        this.swap(MinHeap.HEAD_INDEX, this.size());
+        const result = this.nodes.pop();
+        this.heapifyDown(MinHeap.HEAD_INDEX);
+        return result;
+    }
+    
+    peek() {
+        return this.nodes[MinHeap.HEAD_INDEX];
+    }
+    
+    size() {
+        return this.nodes.length - 1;
+    }
+    
+    isEmpty() {
+        return this.size() === 0;
+    }
+    
+}
+~~~
