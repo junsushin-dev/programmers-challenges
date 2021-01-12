@@ -81,6 +81,8 @@
 
 [N으로 표현 - Java, JavaScript](docs/dynamic-programming/represent-with-Ns.md)
 
+[도둑질 - Java](docs/dynamic-programming/burglary.md)
+
 ### 깊이/너비 우선탐색(DFS/BFS)
 
 [네트워크 - Java](docs/dfs&bfs/network-java.md)
