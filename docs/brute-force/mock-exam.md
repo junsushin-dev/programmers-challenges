@@ -3,6 +3,7 @@
 출처: https://programmers.co.kr/learn/courses/30/lessons/42840
 
 ## 지문
+
 수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.
 
 1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, ...
@@ -14,16 +15,17 @@
 1번 문제부터 마지막 문제까지의 정답이 순서대로 들은 배열 answers가 주어졌을 때, 가장 많은 문제를 맞힌 사람이 누구인지 배열에 담아 return 하도록 solution 함수를 작성해주세요.
 
 제한 조건
+
 - 시험은 최대 10,000 문제로 구성되어있습니다.
 - 문제의 정답은 1, 2, 3, 4, 5중 하나입니다.
 - 가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.
 
 입출력 예
 
-answers	| return
---------|--------
-[1,2,3,4,5]	| [1]
-[1,3,2,4,2]	| [1,2,3]
+| answers     | return  |
+| ----------- | ------- |
+| [1,2,3,4,5] | [1]     |
+| [1,3,2,4,2] | [1,2,3] |
 
 입출력 예 설명
 
@@ -46,7 +48,8 @@ answers	| return
 문제의 요구사항에 맞추어서 모든 경우의 수를 따지는 완전탐색을 통해 해결하는 문제입니다. 기본적으로 주어진 수포자 1~3이 찍는 방식을 시뮬레이션을 한다고 생각하면 됩니다.
 
 수포자의 찍는 방식과 점수를 개념적으로 분리하기 위해서 TestTaker 클래스를 정의하였습니다.
-~~~java
+
+```java
 class TestTaker {
     public int length;
     public int currIndex;
@@ -75,11 +78,13 @@ class TestTaker {
     }
 
 }
-~~~
+```
+
 TestTaker 클래스는 length, index 등의 기본적인 변수와 돌아가며 찍는 번호의 배열인 answers, 그리고 점수인 score를 가지고 있습니다. pickAnswer() 함수를 통해 다음 찍을 번호를 가져오고, scoreOne()을 통해 답안을 맞출 경우 score를 1씩 증가시킬 수 있습니다.
 
 정의된 클래스를 이용하여 수포자 1~3에 해당하는 인스턴스를 만들어 줍니다. 만들어준 인스턴스들은 for 문에서 사용하기 위해 리스트에 저장합니다.
-~~~java
+
+```java
 TestTaker first = new TestTaker(5, new int[]{1,2,3,4,5});
 TestTaker second = new TestTaker(8, new int[]{2,1,2,3,2,4,2,5});
 TestTaker third = new TestTaker(10, new int[]{3,3,1,1,2,2,4,4,5,5});
@@ -88,10 +93,11 @@ List<TestTaker> testTakers = new ArrayList<>();
 testTakers.add(first);
 testTakers.add(second);
 testTakers.add(third);
-~~~
+```
 
 주어진 문제번호에 대해서 각 수포자의 찍는 과정을 시뮬레이션합니다.
-~~~java
+
+```java
 for(int i = 0; i < answers.length; i++) {
     for(TestTaker person: testTakers) {
         if(person.pickAnswer() == answers[i]) {
@@ -99,10 +105,11 @@ for(int i = 0; i < answers.length; i++) {
         }
     }
 }
-~~~
+```
 
 최고점수를 계산하고 최고점수를 받은 수포자의 번호를 답으로 반환하기 위하여 추가해 줍니다. 동점자의 경우 오름차순 정렬이 필요하나, 0부터 시작하여 낮은 번호부터 추가하기 때문에 별도의 정렬과정은 필요 없습니다.
-~~~java
+
+```java
 int maxScore = 0;
 for(TestTaker person: testTakers) {
     maxScore = Math.max(maxScore, person.getScore());
@@ -121,10 +128,11 @@ for(int i=0; i<topScore.size(); i++) {
 }
 
 return answer;
-~~~
+```
 
 ## Solution.java
-~~~java
+
+```java
 import java.util.*;
 
 class Solution {
@@ -196,4 +204,33 @@ class Solution {
         return answer;
     }
 }
-~~~
+```
+
+## solution.js
+
+```js
+const firstTester = [1, 2, 3, 4, 5];
+const secondTester = [2, 1, 2, 3, 2, 4, 2, 5];
+const thirdTester = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
+const testers = [firstTester, secondTester, thirdTester];
+
+function solution(answers) {
+  const result = [];
+  let scores = [0, 0, 0];
+  answers.forEach((answer, answerNo) => {
+    testers.forEach((tester, testerNo) => {
+      const pick = tester[answerNo % tester.length];
+      if (pick === answer) {
+        scores[testerNo] += 1;
+      }
+    });
+  });
+  const topScore = Math.max(...scores);
+  scores.forEach((score, testerNo) => {
+    if (score === topScore) {
+      result.push(testerNo + 1);
+    }
+  });
+  return result;
+}
+```
